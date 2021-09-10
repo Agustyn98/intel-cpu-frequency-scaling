@@ -1,10 +1,12 @@
 Bash scripts that set intel's cpu governor and turbo boost
 
-Powersave: 
+-Powersave: 
 Constantly maintains the cpu's frequency at the base frequecy, regardless of the load
-Conservative:
+
+-Conservative:
 Fluctuates on-demand between the base frequency and the maximum frequency without intel's turbo boost
-Performance:
+
+-Performance:
 Fluctuates on-demand between the base frequency and the maximum frequency with turbo boost
 
 To monitor frequencies run:
