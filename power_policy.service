@@ -1,0 +1,7 @@
+[Unit]
+Description=Set default cpu power policy
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/cpufreq conservative
+[Install]
+WantedBy=multi-user.target
