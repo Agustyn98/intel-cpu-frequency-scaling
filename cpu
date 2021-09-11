@@ -1,0 +1,64 @@
+#!/bin/bash
+
+mode=$1
+
+case $mode in
+
+  power_max | 0)
+    echo -n "Maximum powersave mode"$'\n'
+    energy=power
+    turbo=1
+    ;;
+
+  power | 1)
+    echo -n "Powersave mode"$'\n'
+    energy=balance_power
+    turbo=1
+    ;;
+
+  balance | 2)
+    echo -n "Balanced mode"$'\n'
+    energy=balance_power
+    turbo=0
+    ;;
+    
+  performance | 3)
+    echo -n "Performance mode"$'\n'
+    energy=balance_performance
+    turbo=0
+    ;;
+
+  performance_max | 4)
+    echo -n "Maximum performance mode, don't run it for too long"$'\n'
+    energy=performance
+    turbo=0
+    ;;
+
+  --help)
+    echo -n "Usage: cpu [OPTION]"$'\n'
+    echo -n "cpu power_max or cpu 0 for maximum powersaving mode"$'\n'
+    echo -n "cpu power or cpu 1 for powersaving mode"$'\n'
+    echo -n "cpu balance or cpu 2 for balanced performance mode"$'\n'
+    echo -n "cpu performance or cpu 3 for performance mode"$'\n'
+    echo -n "cpu performance_max or cpu 4 for maximum performance, very aggressive on the cpu"$'\n'
+	exit 1
+    ;;
+
+  *)
+    echo -n "Wrong argument"$'\n'
+    exit 1
+    ;;
+    
+esac
+
+if [ "$EUID" -ne 0 ]
+  then echo "Please run as root"
+  exit
+fi
+
+for i in {0..7}
+do
+	echo $energy > /sys/devices/system/cpu/cpufreq/policy$i/energy_performance_preference
+done
+
+echo $turbo > /sys/devices/system/cpu/intel_pstate/no_turbo
