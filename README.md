@@ -37,7 +37,7 @@ Constatly runs at the cpu's maximum frequency, regardless of the load, I would o
 
 ## Usage:
 
-**Move the script to /usr/local/bin to run it globally**
+**Move the script `cpu` to /usr/local/bin to run it globally**
 
 
 `cpu power_max` or `cpu 0`
