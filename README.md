@@ -48,7 +48,7 @@ Constatly runs at the cpu's maximum frequency, regardless of the load, I would o
 
 `cpu performance` or `cpu 3`
 
-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`cpu performance_max` or `cpu 4`
+`cpu performance_max` or `cpu 4`
 
 To monitor frequencies run:
 `watch cat /sys/devices/system/cpu/cpu[0-7]*/cpufreq/scaling_cur_freq`
