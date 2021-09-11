@@ -25,13 +25,13 @@ Sets the energy performance preference to 'balance_power' and enables turbo boos
 
 -Performance:
 
-Sets the energy performance preference to 'balance_performance' and enables turbo boost, about 50% more performance than balance mode
+Sets the energy performance preference to 'balance_performance' and enables turbo boost, about 50% more performance than balance mode.
 This mode is the default on most kernels, however it doesn't reach the cpu's maximum frequency under load on computers I've tested it
 
 
 -Maximum performance:
 
-Sets the energy performance preference to 'performance' and enables turbo boost, about 7% more performance than performance mode
+Sets the energy performance preference to 'performance' and enables turbo boost, about 7% more performance than performance mode.
 Constatly runs at the cpu's maximum frequency, regardless of the load, I would only run this mode for short periods of time
 
 
