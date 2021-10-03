@@ -1,5 +1,5 @@
 # Change Intel's energy preference
-Bash script that set intel's cpu energy preference and turbo boost.
+Bash script that sets intel's cpu energy preference and turbo boost.
 
 This script can help laptops get even more battery life than under Windows
 
