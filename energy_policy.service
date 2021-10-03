@@ -2,6 +2,6 @@
 Description=Set default cpu power policy
 [Service]
 Type=oneshot
-ExecStart=/usr/local/bin/cpu power
+ExecStart=/usr/local/bin/cpu 1
 [Install]
 WantedBy=multi-user.target
