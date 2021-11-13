@@ -26,9 +26,9 @@ case $mode in
     ;;
     
   performance | 3)
-    echo -n "Performance mode 1"$'\n'
-    energy=90
-    energy_bias=6
+    echo -n "Performance mode"$'\n'
+    energy=balance_performance
+    energy_bias=8
     turbo=0
     ;;
 
@@ -44,7 +44,7 @@ case $mode in
     echo -n "cpu power_max or cpu 0 for maximum powersaving mode"$'\n'
     echo -n "cpu power or cpu 1 for powersaving mode"$'\n'
     echo -n "cpu balance or cpu 2 for balanced performance mode"$'\n'
-    echo -n "cpu performance or cpu 3 for performance mode"$'\n'
+    echo -n "cpu performance or cpu 3 for performance mode, default settings of most kernels"$'\n'
     echo -n "cpu performance_max or cpu 4 for maximum performance, very aggressive on the cpu"$'\n'
 	exit 1
     ;;
@@ -72,10 +72,4 @@ for i in {0..7}
 do
 	echo -n $energy_bias > /sys/devices/system/cpu/cpu$i/power/energy_perf_bias
 done
-
-if [ $mode -eq 0 ]
-  then 
-  	echo 1 > /sys/class/backlight/intel_backlight/brightness
-  exit
-fi
 
